@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ali_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/ali_auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/phoneNumber-AuthSDK-2.10.0/ali_auth.phoneNumber-AuthSDK-2.10.0.iml" filepath="$PROJECT_DIR$/.idea/modules/phoneNumber-AuthSDK-2.10.0/ali_auth.phoneNumber-AuthSDK-2.10.0.iml" />
     </modules>
   </component>
 </project>

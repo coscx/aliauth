@@ -52,3 +52,10 @@ android {
 flutter {
     source '../..'
 }
+
+dependencies {
+    implementation project(path: ':phoneNumber-AuthSDK-2.10.0')
+}
+
+
+

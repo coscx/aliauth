@@ -1,1 +1,2 @@
+include ':phoneNumber-AuthSDK-2.10.0'
 rootProject.name = 'ali_auth'
