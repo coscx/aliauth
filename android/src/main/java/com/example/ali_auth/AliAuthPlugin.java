@@ -19,8 +19,11 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
+import android.util.TypedValue;
 import android.widget.ImageView;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 import com.alibaba.fastjson.JSON;
@@ -208,6 +211,17 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
     }
 
 
+    private View DynamicView() {
+        TextView switchTV = new TextView(mContext);
+        RelativeLayout.LayoutParams mLayoutParams2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, dp2px(this, 50));
+        mLayoutParams2.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+        mLayoutParams2.setMargins(0, dp2px(mContext, 450), 0, 0);
+        switchTV.setText("-----  自定义view  -----");
+        switchTV.setTextColor(0xff999999);
+        switchTV.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13.0F);
+        switchTV.setLayoutParams(mLayoutParams2);
+        return switchTV;
+    }
     /**
      * 检查运营商是否合规，不支持境外卡一键登录
      */
@@ -360,8 +374,8 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
                         .setSwitchAccTextSize(14)
                         .setScreenOrientation(authPageOrientation)
                         // 动画效果
-//                        .setAuthPageActIn("in_activity", "out_activity")
-//                        .setAuthPageActOut("in_activity", "out_activity")
+                       .setAuthPageActIn("in_activity", "out_activity")
+                       .setAuthPageActOut("in_activity", "out_activity")
                         // 勾选框
                         .setCheckboxHidden(false)
                         .setCheckBoxWidth(18)
@@ -374,6 +388,7 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
                         .setAppPrivacyOne("《用户协议》", "https://xxxxxxxxxx/fox/events/contract")
                         .setAppPrivacyTwo("《隐私协议》", "https://xxxxxxxxxx/fox/events/privacy")
                         .setLogBtnToastHidden(false)
+                        .setView(DynamicView())
                         .create()
         );
     }
