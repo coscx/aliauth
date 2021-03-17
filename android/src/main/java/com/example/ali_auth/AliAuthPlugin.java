@@ -226,7 +226,7 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
         ImageView switchTV = new ImageView(mContext);
         RelativeLayout.LayoutParams mLayoutParams2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, dp2px(mContext, 50));
         mLayoutParams2.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
-        mLayoutParams2.setMargins(0, dp2px(mContext, 450), 0, 0);
+        mLayoutParams2.setMargins(0, dp2px(mContext, 500), 0, 0);
         switchTV.setImageDrawable(mContext.getResources().getDrawable(R.drawable.weixin));
         switchTV.setLayoutParams(mLayoutParams2);
         return switchTV;
@@ -340,13 +340,7 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
         mAlicomAuthHelper.removeAuthRegisterViewConfig();
         mAlicomAuthHelper.addAuthRegistViewConfig("switch_acc_tvs", new AuthRegisterViewConfig.Builder()
                 .setView(DynamicView())
-                .setRootViewId(AuthRegisterViewConfig.RootViewId.ROOT_VIEW_ID_BODY)
-                .setCustomInterface(new CustomInterface() {
-                    @Override
-                    public void onClick(Context context) {
-//                        mAlicomAuthHelper.quitLoginPage();
-                    }
-                }).build());
+                .build());
         mAlicomAuthHelper.addAuthRegistViewConfig("switch_acc_tv", new AuthRegisterViewConfig.Builder()
                 .setView(DynamicImageView())
                 .setRootViewId(AuthRegisterViewConfig.RootViewId.ROOT_VIEW_ID_BODY)
