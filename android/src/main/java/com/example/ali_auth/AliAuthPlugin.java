@@ -213,7 +213,7 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
 
     private View DynamicView() {
         TextView switchTV = new TextView(mContext);
-        RelativeLayout.LayoutParams mLayoutParams2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, dp2px(this, 50));
+        RelativeLayout.LayoutParams mLayoutParams2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, dp2px(mContext, 50));
         mLayoutParams2.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         mLayoutParams2.setMargins(0, dp2px(mContext, 450), 0, 0);
         switchTV.setText("-----  自定义view  -----");
@@ -327,6 +327,17 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
 
     // ⼀键登录授权⻚⾯
     private void configLoginTokenPort(final MethodCall call, final MethodChannel.Result methodResult) {
+        mAlicomAuthHelper.removeAuthRegisterXmlConfig();
+        mAlicomAuthHelper.removeAuthRegisterViewConfig();
+        mAlicomAuthHelper.addAuthRegistViewConfig("switch_acc_tv", new AuthRegisterViewConfig.Builder()
+                .setView(DynamicView())
+                .setRootViewId(AuthRegisterViewConfig.RootViewId.ROOT_VIEW_ID_BODY)
+                .setCustomInterface(new CustomInterface() {
+                    @Override
+                    public void onClick(Context context) {
+                        mAlicomAuthHelper.quitLoginPage();
+                    }
+                }).build());
         int authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
         if (Build.VERSION.SDK_INT == 26) {
             authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_BEHIND;
@@ -388,7 +399,6 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
                         .setAppPrivacyOne("《用户协议》", "https://xxxxxxxxxx/fox/events/contract")
                         .setAppPrivacyTwo("《隐私协议》", "https://xxxxxxxxxx/fox/events/privacy")
                         .setLogBtnToastHidden(false)
-                        .setView(DynamicView())
                         .create()
         );
     }
