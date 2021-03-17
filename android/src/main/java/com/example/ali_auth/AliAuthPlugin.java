@@ -347,7 +347,12 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
                 .setCustomInterface(new CustomInterface() {
                     @Override
                     public void onClick(Context context) {
-                        mAlicomAuthHelper.quitLoginPage();
+                       // mAlicomAuthHelper.quitLoginPage();
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject.put("returnCode", "12345");
+                        jsonObject.put("returnMsg", "wx");
+                        jsonObject.put("returnData", "");
+                        methodResult.success(jsonObject);
                     }
                 }).build());
         int authPageOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
