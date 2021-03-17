@@ -216,9 +216,18 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
         RelativeLayout.LayoutParams mLayoutParams2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, dp2px(mContext, 50));
         mLayoutParams2.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         mLayoutParams2.setMargins(0, dp2px(mContext, 450), 0, 0);
-        switchTV.setText("-----  自定义view  -----");
+        switchTV.setText("-----  三方登录  -----");
         switchTV.setTextColor(0xff999999);
         switchTV.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13.0F);
+        switchTV.setLayoutParams(mLayoutParams2);
+        return switchTV;
+    }
+    private View DynamicImageView() {
+        ImageView switchTV = new ImageView(mContext);
+        RelativeLayout.LayoutParams mLayoutParams2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, dp2px(mContext, 50));
+        mLayoutParams2.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+        mLayoutParams2.setMargins(0, dp2px(mContext, 450), 0, 0);
+        switchTV.setImageDrawable(mContext.getResources().getDrawable(R.drawable.weixin));
         switchTV.setLayoutParams(mLayoutParams2);
         return switchTV;
     }
@@ -329,8 +338,17 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
     private void configLoginTokenPort(final MethodCall call, final MethodChannel.Result methodResult) {
         mAlicomAuthHelper.removeAuthRegisterXmlConfig();
         mAlicomAuthHelper.removeAuthRegisterViewConfig();
-        mAlicomAuthHelper.addAuthRegistViewConfig("switch_acc_tv", new AuthRegisterViewConfig.Builder()
+        mAlicomAuthHelper.addAuthRegistViewConfig("switch_acc_tvs", new AuthRegisterViewConfig.Builder()
                 .setView(DynamicView())
+                .setRootViewId(AuthRegisterViewConfig.RootViewId.ROOT_VIEW_ID_BODY)
+                .setCustomInterface(new CustomInterface() {
+                    @Override
+                    public void onClick(Context context) {
+//                        mAlicomAuthHelper.quitLoginPage();
+                    }
+                }).build());
+        mAlicomAuthHelper.addAuthRegistViewConfig("switch_acc_tv", new AuthRegisterViewConfig.Builder()
+                .setView(DynamicImageView())
                 .setRootViewId(AuthRegisterViewConfig.RootViewId.ROOT_VIEW_ID_BODY)
                 .setCustomInterface(new CustomInterface() {
                     @Override
