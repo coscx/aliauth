@@ -336,8 +336,8 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
                         .setWebViewStatusBarColor(Color.WHITE)
                         // logo设置
                         .setLogoImgPath("logo")
-                        .setLogoWidth(192)
-                        .setLogoHeight(192)
+                        .setLogoWidth(92)
+                        .setLogoHeight(92)
                         .setLogoScaleType(ImageView.ScaleType.FIT_CENTER)
                         // slogan 设置
                         .setSloganText("鹊桥缘遇")
