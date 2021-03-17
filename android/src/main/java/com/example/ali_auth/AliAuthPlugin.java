@@ -335,12 +335,12 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
                         .setWebNavTextSize(20)
                         .setWebViewStatusBarColor(Color.WHITE)
                         // logo设置
-                        .setLogoImgPath("icon_logo")
-                        .setLogoWidth(92)
-                        .setLogoHeight(92)
+                        .setLogoImgPath("logo")
+                        .setLogoWidth(192)
+                        .setLogoHeight(192)
                         .setLogoScaleType(ImageView.ScaleType.FIT_CENTER)
                         // slogan 设置
-                        .setSloganText("畅读海量正版绘本, 请先登录")
+                        .setSloganText("鹊桥缘遇")
                         .setSloganTextColor(Color.parseColor("#AAAAAA"))
                         .setSloganTextSize(12)
                         // 号码设置
