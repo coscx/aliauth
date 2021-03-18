@@ -23,7 +23,7 @@ const PNSCodeFail = "600002";
 const IosAliAuthSdk =
     'T4fBIqVu+YX1H6gNBiIi76o/E3OH0qlo0Do+AtBY2IY9xZM8bzACCYh2hfyYPc4s5yAcEFNDdIgj2gaYDDG/YpdyJDI30HAUUw3wxTdISp5/TFVXeFhVkA0iiBPRh+eoYkOGOtRj+y9A==';
 const AndroidAuthSdk =
-    'b8f1eOJBPU2f2tHZ2CG2qTNLl6CM0WLnmYuQfu5dimi1ygfPE2PCRY4x8ZpL0LWEGbr1mxe0Ylejc6nXXa3hMadq5yqSYygJuuB9jF0PWFfJ7SNpMWElspKViR5waDpasnyWMht3l9Pmme81hqLgXJy/zNKQ+jDKYaO8rkPLpsm3NKm4tKuQcaMiS8KSXTi4DdNLx+OVrFxS2z';
+    'SvhLsigI/nusTygMYGSEFEESA8a2WRv0HaYIS1S0pHXKOTGWVEoN12axM8S2vE0Mt8nY+jBP6/fnw2YMToikDpDc5zPNnhjkjsCtrkN0yYQlnB2Ar9lN9sLcxnLbkfv8bQMelLfQ/Ty0Era6VVjv9mv1vUy2OzuMPsyjtExf7S707p6pI7urEyVELy5sm2zhcBQhukD8TpH2glQ9lyXoH2aDcK387mTiPbOayKoVcOoOS35YxnfXTrFQlk8G6+mWAa1GxhlnVfYudo9ojs/EhXLFdODaCdkhaC6aNqSI4r+7N3/BI7xn8BZmDs+NkZlS';
 
 
 class _MyAppState extends State<MyApp> {

@@ -402,8 +402,8 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
                         .setSwitchAccTextSize(14)
                         .setScreenOrientation(authPageOrientation)
                         // 动画效果
-                       .setAuthPageActIn("in_activity", "out_activity")
-                       .setAuthPageActOut("in_activity", "out_activity")
+                       //.setAuthPageActIn("in_activity", "out_activity")
+                       //.setAuthPageActOut("in_activity", "out_activity")
                         // 勾选框
                         .setCheckboxHidden(false)
                         .setCheckBoxWidth(18)
@@ -416,6 +416,8 @@ public class AliAuthPlugin implements FlutterPlugin, MethodCallHandler, Activity
                         .setAppPrivacyOne("《用户协议》", "https://xxxxxxxxxx/fox/events/contract")
                         .setAppPrivacyTwo("《隐私协议》", "https://xxxxxxxxxx/fox/events/privacy")
                         .setLogBtnToastHidden(false)
+                        //.setDialogWidth(200)
+                        //.setDialogHeight(400)
                         .create()
         );
     }
